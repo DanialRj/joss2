@@ -10,6 +10,9 @@ class TimDashboard extends CI_Controller {
 
     public function index ()
     {
-        echo "ini tim"; 
+        $this->load->view('layout/header');
+        $this->load->view('tim_spt2k/side_menu');
+        $this->load->view('tim_spt2k/index');
+        $this->load->view('layout/footer');
     }
 }

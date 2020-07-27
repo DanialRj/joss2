@@ -10,6 +10,9 @@ class WaliDashboard extends CI_Controller {
 
     public function index ()
     {
-        echo "ini wali"; 
+        $this->load->view('layout/header');
+        $this->load->view('wali_kelas/side_menu');
+        $this->load->view('wali_kelas/index');
+        $this->load->view('layout/footer');
     }
 }

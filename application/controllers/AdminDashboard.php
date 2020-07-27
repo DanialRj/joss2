@@ -10,6 +10,9 @@ class AdminDashboard extends CI_Controller {
 
     public function index ()
     {
-        echo "ini admin"; 
+        $this->load->view('layout/header');
+        $this->load->view('admin/side_menu');
+        $this->load->view('admin/index');
+        $this->load->view('layout/footer');
     }
 }
