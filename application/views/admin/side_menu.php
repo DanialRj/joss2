@@ -20,13 +20,38 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>Menu List Laporan</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <a class="collapse-item" href="buttons.html">laporan Siswa</a>
+            <a class="collapse-item" href="buttons.html">laporan Kategori Pelangaran</a>
+            <a class="collapse-item" href="buttons.html">laporan Jenis Pelanggaran</a>
+            <a class="collapse-item" href="buttons.html">laporan Kelas</a>
+            <a class="collapse-item" href="buttons.html">laporan Kategori Masalah</a>
+            <a class="collapse-item" href="buttons.html">laporan Nilai Sosial</a>
+            <a class="collapse-item" href="buttons.html">laporan Pelangaran</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Menu Admin</span>
+        </a>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?= base_url('admin'); ?>">Tambah Admin</a>
+            <a class="collapse-item" href="buttons.html">Tambah TIM SPT2K</a>
+            <a class="collapse-item" href="buttons.html">Tambah Wali Kelas</a>
+            <a class="collapse-item" href="buttons.html">Tambah Siswa</a>
+            <a class="collapse-item" href="buttons.html">Tambah Kategori Pelangaran</a>
+            <a class="collapse-item" href="buttons.html">Tambah Jenis Pelanggaran</a>
+            <a class="collapse-item" href="buttons.html">Tambah Kelas</a>
+            <a class="collapse-item" href="buttons.html">Tambah Kategori Masalah</a>
+            <a class="collapse-item" href="buttons.html">Tambah Nilai Sosial</a>
+            <a class="collapse-item" href="buttons.html">Tambah Pelangaran</a>
           </div>
         </div>
       </li>
