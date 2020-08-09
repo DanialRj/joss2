@@ -5,7 +5,10 @@ class SiswaModel extends CI_Model
 {
     public function getAllData()
     {
-        return $this->db->get('siswa')->result_array();
+        $this->db->select('siswa.*, kelas.*');
+        $this->db->from('siswa');
+        $this->db->join('kelas', 'kelas.id_kelas = siswa.id_kelas');
+        return $this->db->get()->result_array();
     }
 
     public function getDataUserById($id)

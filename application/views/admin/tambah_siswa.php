@@ -46,7 +46,7 @@
                       <?php $i = 1; foreach ($data as $key) : ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $key['id_kelas'] ?></td>
+                      <td><?= $key['kelas'] . ' ' . $key['jurusan'] ?></td>
                       <td><?= $key['nisn'] ?></td>
                       <td><?= $key['nama_siswa'] ?></td>
                       <td><?= $key['jenis_kelamin'] ?></td>
