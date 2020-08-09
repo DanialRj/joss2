@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2020 at 10:59 PM
+-- Generation Time: Aug 09, 2020 at 11:45 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -111,6 +111,13 @@ CREATE TABLE `nipel` (
   `jenis_pelanggaran` varchar(255) DEFAULT NULL,
   `bobot_poin` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nipel`
+--
+
+INSERT INTO `nipel` (`id_jenis_pelanggaran`, `id_kategori_pelanggaran`, `jenis_pelanggaran`, `bobot_poin`) VALUES
+(1, 1, 'bolos', 10);
 
 -- --------------------------------------------------------
 
@@ -305,7 +312,7 @@ ALTER TABLE `nilai_sosial`
 -- AUTO_INCREMENT for table `nipel`
 --
 ALTER TABLE `nipel`
-  MODIFY `id_jenis_pelanggaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jenis_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pelanggaran`
