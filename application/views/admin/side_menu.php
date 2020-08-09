@@ -45,13 +45,13 @@
             <a class="collapse-item" href="<?= base_url('admin'); ?>">Tambah Admin</a>
             <a class="collapse-item" href="<?= base_url('tim'); ?>">Tambah TIM SPT2K</a>
             <a class="collapse-item" href="<?= base_url('wali'); ?>">Tambah Wali Kelas</a>
-            <a class="collapse-item" href="buttons.html">Tambah Siswa</a>
-            <a class="collapse-item" href="buttons.html">Tambah Kategori Pelangaran</a>
-            <a class="collapse-item" href="buttons.html">Tambah Jenis Pelanggaran</a>
-            <a class="collapse-item" href="buttons.html">Tambah Kelas</a>
-            <a class="collapse-item" href="buttons.html">Tambah Kategori Masalah</a>
-            <a class="collapse-item" href="buttons.html">Tambah Nilai Sosial</a>
-            <a class="collapse-item" href="buttons.html">Tambah Pelangaran</a>
+            <a class="collapse-item" href="<?= base_url('siswa'); ?>">Tambah Siswa</a>
+            <a class="collapse-item" href="<?= base_url('kategoripelanggaran'); ?>">Tambah Kategori Pelangaran</a>
+            <a class="collapse-item" href="<?= base_url('jenispelanggaran'); ?>">Tambah Jenis Pelanggaran</a>
+            <a class="collapse-item" href="<?= base_url('kelas'); ?>">Tambah Kelas</a>
+            <a class="collapse-item" href="<?= base_url('kategorimasalah'); ?>">Tambah Kategori Masalah</a>
+            <a class="collapse-item" href="<?= base_url('nilaisosial'); ?>">Tambah Nilai Sosial</a>
+            <a class="collapse-item" href="<?= base_url('pelanggaran'); ?>">Tambah Pelangaran</a>
           </div>
         </div>
       </li>

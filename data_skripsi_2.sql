@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2020 at 09:40 PM
+-- Generation Time: Aug 09, 2020 at 10:59 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -55,6 +55,14 @@ CREATE TABLE `kelas` (
   `kelas` varchar(255) DEFAULT NULL,
   `jurusan` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kelas`
+--
+
+INSERT INTO `kelas` (`id_kelas`, `id_wali_kelas`, `kelas`, `jurusan`) VALUES
+(1, 2, 'X', 'TAB'),
+(2, 2, 'XI', 'TAB C');
 
 -- --------------------------------------------------------
 
@@ -147,6 +155,15 @@ CREATE TABLE `ripel` (
   `kategori_pelanggaran` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ripel`
+--
+
+INSERT INTO `ripel` (`id_kategori_pelanggaran`, `kategori_pelanggaran`) VALUES
+(1, 'ringan'),
+(2, 'sedang'),
+(3, 'berat');
+
 -- --------------------------------------------------------
 
 --
@@ -162,6 +179,14 @@ CREATE TABLE `siswa` (
   `alamat` text,
   `tgl_lahir` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `nisn`, `nama_siswa`, `jenis_kelamin`, `alamat`, `tgl_lahir`) VALUES
+(1, 1, '101010101', 'danial', 'Laki-laki', 'mojosongo', '2020-08-12'),
+(2, 2, '10101023', 'jafar', 'Perempuan', 'semarang', '2020-08-05');
 
 -- --------------------------------------------------------
 
@@ -262,7 +287,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lilas`
@@ -298,13 +323,13 @@ ALTER TABLE `rilah`
 -- AUTO_INCREMENT for table `ripel`
 --
 ALTER TABLE `ripel`
-  MODIFY `id_kategori_pelanggaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kategori_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tim_stp2k`
