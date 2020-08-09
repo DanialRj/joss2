@@ -43,8 +43,8 @@
         <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?= base_url('admin'); ?>">Tambah Admin</a>
-            <a class="collapse-item" href="buttons.html">Tambah TIM SPT2K</a>
-            <a class="collapse-item" href="buttons.html">Tambah Wali Kelas</a>
+            <a class="collapse-item" href="<?= base_url('tim'); ?>">Tambah TIM SPT2K</a>
+            <a class="collapse-item" href="<?= base_url('wali'); ?>">Tambah Wali Kelas</a>
             <a class="collapse-item" href="buttons.html">Tambah Siswa</a>
             <a class="collapse-item" href="buttons.html">Tambah Kategori Pelangaran</a>
             <a class="collapse-item" href="buttons.html">Tambah Jenis Pelanggaran</a>

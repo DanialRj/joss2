@@ -40,6 +40,7 @@ class Auth extends CI_Controller {
             if ( $password ==  $dataUser['password'] )
             {
                 $data = [
+                            'id' => $dataUser['id_admin'],
                             'username' => $dataUser['username'],
                         ];
                 $this->session->set_userdata($data);
@@ -56,6 +57,7 @@ class Auth extends CI_Controller {
             if ( $password == $dataUser['password'] )
             {
                 $data = [
+                            'id' => $dataUser['id_tim'],
                             'username' => $dataUser['username'],
                         ];
                 $this->session->set_userdata($data);
@@ -72,6 +74,7 @@ class Auth extends CI_Controller {
             if ( $password ==  $dataUser['password'] )
             {
                 $data = [
+                            'id' => $dataUser['id_wali_kelas'],
                             'username' => $dataUser['username'],
                         ];
                 $this->session->set_userdata($data);
