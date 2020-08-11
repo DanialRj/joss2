@@ -8,9 +8,24 @@ class PelanggaranModel extends CI_Model
         return $this->db->get('pelanggaran')->result_array();
     }
 
+    public function getAllDataByIdMasalah($id = NULL)
+    {
+        return $this->db->get_where('pelanggaran', ['id_kategori_masalah' => $id])->result_array();
+    }
+
+    public function getAllDataByIdForigen($id = NULL, $forigen)
+    {
+        return $this->db->get_where('pelanggaran', [$forigen => $id])->result_array();
+    }
+
     public function getDataUserById($id)
     {
         return $this->db->get_where('pelanggaran', ['id_pelanggaran' => $id])->row_array();
+    }
+
+    public function getAllDataByIdSiswa($id)
+    {
+        return $this->db->get_where('pelanggaran', ['id_siswa' => $id])->row_array();
     }
     
     public function insertData($data)

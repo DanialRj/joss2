@@ -4,7 +4,7 @@
             <a href="<?= base_url('laporansiswa/laporankeseluruhan'); ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm "><i class="fas fa-download fa-sm text-white-50"></i> Laporan Data Siswa</a>
             <a href="#" data-toggle="modal" data-target="#tambahModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Laporan Data Siswa Dari Kelas</a>
             <a href="<?= base_url('laporansiswa/laporannilaisosial'); ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm "><i class="fas fa-download fa-sm text-white-50"></i> Laporan Data Nilai Sosial</a>
-            <a href="#" data-toggle="modal" data-target="#tambahModal2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Laporan Data Siswa Dari Kelas</a>
+            <a href="#" data-toggle="modal" data-target="#tambahModal2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Laporan Data Nilai Sosial Dari Kelas</a>
           </div>
 
           <?php if(validation_errors()) : ?>
