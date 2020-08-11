@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2020 at 07:32 PM
+-- Generation Time: Aug 11, 2020 at 11:10 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -62,7 +62,8 @@ CREATE TABLE `kelas` (
 
 INSERT INTO `kelas` (`id_kelas`, `id_wali_kelas`, `kelas`, `jurusan`) VALUES
 (1, 2, 'X', 'TAB'),
-(2, 2, 'XI', 'TAB C');
+(2, 5, 'XI', 'TAB C'),
+(4, 6, 'XII', 'API A');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,9 @@ CREATE TABLE `lilas` (
 --
 
 INSERT INTO `lilas` (`id_wali_kelas`, `username`, `password`, `nama_wali_kelas`, `alert`) VALUES
-(2, 'wali@wali.com', 'wali123', 'joko piono', '2020-08-11');
+(2, 'wali@wali.com', 'wali123', 'joko piono', '2020-08-11'),
+(5, 'wali2@wali.com', 'wali123', 'joko lilo', NULL),
+(6, 'wali3@wali.com', 'wali123', 'heho', NULL);
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,13 @@ CREATE TABLE `pelanggaran` (
 --
 
 INSERT INTO `pelanggaran` (`id_pelanggaran`, `id_kategori_masalah`, `id_tim`, `id_siswa`, `id_nilai_sosial`, `id_jenis_pelanggaran`, `bobot_poin`, `at`) VALUES
-(1, 1, 2, 2, 1, 3, 50, '2020-08-06');
+(1, 1, 2, 2, 1, 3, 50, '2020-08-06'),
+(7, 1, 2, 3, 4, 1, 100, '2020-08-11'),
+(8, NULL, 2, 1, NULL, 1, 100, '2020-08-11'),
+(9, 3, 3, 3, 4, 4, 150, '2020-08-11'),
+(10, 1, 2, 2, 1, 1, 100, '2020-08-11'),
+(11, NULL, 2, 2, 1, 3, 50, '2020-08-11'),
+(12, NULL, 2, 1, NULL, 1, 100, '2020-08-11');
 
 -- --------------------------------------------------------
 
@@ -240,7 +249,8 @@ CREATE TABLE `tim_stp2k` (
 --
 
 INSERT INTO `tim_stp2k` (`id_tim`, `nama_tim`, `username`, `password`) VALUES
-(2, 'tim1', 'tim@tim.com', 'tim123');
+(2, 'tim1', 'tim@tim.com', 'tim123'),
+(3, 'tim 2', 'tim2@tim.com', 'tim123');
 
 --
 -- Indexes for dumped tables
@@ -321,13 +331,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `lilas`
 --
 ALTER TABLE `lilas`
-  MODIFY `id_wali_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_wali_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `nilai_sosial`
@@ -345,7 +355,7 @@ ALTER TABLE `nipel`
 -- AUTO_INCREMENT for table `pelanggaran`
 --
 ALTER TABLE `pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `rilah`
@@ -369,7 +379,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT for table `tim_stp2k`
 --
 ALTER TABLE `tim_stp2k`
-  MODIFY `id_tim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
