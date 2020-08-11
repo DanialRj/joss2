@@ -8,6 +8,11 @@ class PelanggaranModel extends CI_Model
         return $this->db->get('pelanggaran')->result_array();
     }
 
+    public function getAllData2($id)
+    {
+        return $this->db->get_where('pelanggaran', ['id_tim' => $id])->result_array();
+    }
+
     public function getAllDataByIdMasalah($id = NULL)
     {
         return $this->db->get_where('pelanggaran', ['id_kategori_masalah' => $id])->result_array();
