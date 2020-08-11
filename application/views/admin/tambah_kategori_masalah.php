@@ -1,7 +1,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Jenis Pelanggaran</h1>
-            <a href="#" data-toggle="modal" data-target="#tambahModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Tambah Jenis Pelanggaran</a>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Kategori Masalah</h1>
+            <a href="#" data-toggle="modal" data-target="#tambahModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Tambah Kategori Masalah</a>
           </div>
 
           <?php if(validation_errors()) : ?>
@@ -13,7 +13,7 @@
 
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data List Jenis Pelanggaran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data List Kategori Masalah</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -21,18 +21,22 @@
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th>Kategori Pelanggaran</th>
-                      <th>Jenis Pelanggaran</th>
-                      <th>Poin</th>
+                      <th>Kategori Masalah</th>
+                      <th>Bobot Dari</th>
+                      <th>Bobot Sampai</th>
+                      <th>Sanksi</th>
+                      <th>Keterangan</th>
                       <th>Opsi</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>No.</th>
-                      <th>Kategori Pelanggaran</th>
-                      <th>Jenis Pelanggaran</th>
-                      <th>Poin</th>
+                      <th>Kategori Masalah</th>
+                      <th>Bobot Dari</th>
+                      <th>Bobot Sampai</th>
+                      <th>Sanksi</th>
+                      <th>Keterangan</th>
                       <th>Opsi</th>
                     </tr>
                   </tfoot>
@@ -40,20 +44,22 @@
                       <?php $i = 1; foreach ($data as $key) : ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $key['kategori_pelanggaran'] ?></td>
-                      <td><?= $key['jenis_pelanggaran'] ?></td>
-                      <td><?= $key['bobot_poin'] ?></td>
+                      <td><?= $key['kategori_masalah'] ?></td>
+                      <td><?= $key['bobot_dari'] ?></td>
+                      <td><?= $key['bobot_sampai'] ?></td>
+                      <td><?= $key['sanksi'] ?></td>
+                      <td><?= $key['ket'] ?></td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <form action="<?= base_url('jenispelanggaran/edit'); ?>" method="GET">
-                                <input type="text" class="form-control" name="id_jenis_pelanggaran" id="id" value="<?= $key['id_jenis_pelanggaran']; ?>" hidden>
+                            <form action="<?= base_url('kategorimasalah/edit'); ?>" method="GET">
+                                <input type="text" class="form-control" name="id_kategori_masalah" id="id" value="<?= $key['id_kategori_masalah']; ?>" hidden>
                                 <button href="#" class="btn btn-info btn-circle btn-sm mr-1">
                                   <i class="fas fa-info-circle"></i>
                                 </button>
                             </form>
 
-                            <form action="<?= base_url('jenispelanggaran/deleteData'); ?>" method="POST">
-                                <input type="text" class="form-control" name="id_jenis_pelanggaran" id="id" value="<?= $key['id_jenis_pelanggaran']; ?>" hidden>
+                            <form action="<?= base_url('kategorimasalah/deleteData'); ?>" method="POST">
+                                <input type="text" class="form-control" name="id_kategori_masalah" id="id" value="<?= $key['id_kategori_masalah']; ?>" hidden>
                                 <button href="#" class="btn btn-danger btn-circle btn-sm mr-1" onclick="return confirm('Are you sure you want to delete this item?');">
                                   <i class="fas fa-trash"></i>
                                 </button>
@@ -72,28 +78,31 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content p-3">
         <div class="modal-header">
-          <h5 class="modal-title" id="tambahSubMenuModalLabel">Tambah Data Jenis Pelanggaran</h5>
+          <h5 class="modal-title" id="tambahSubMenuModalLabel">Tambah Data Kategori Masalah</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <form action="<?= base_url('jenispelanggaran/saveData'); ?>" method="POST"><br>
+        <form action="<?= base_url('kategorimasalah/saveData'); ?>" method="POST"><br>
 
-            <?php $choseRole = $this->db->get('ripel')->result_array(); ?>
             <div class="input-group mb-3">
-              <select class="custom-select" id="id_kategori_pelanggaran" name="id_kategori_pelanggaran">
-                <?php foreach($choseRole as $role) : ?>
-                    <option value="<?= $role['id_kategori_pelanggaran'] ?>"><?= $role['kategori_pelanggaran'] ?></option>
-                <?php endforeach; ?>
-              </select>
+              <input type="text" class="form-control" placeholder="Kategori Masalah" name="kategori_masalah">
             </div>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nama Jenis Pelanggaran" name="jenis_pelanggaran">
+              <input type="number" class="form-control" placeholder="Bobot Dari" name="bobot_dari">
             </div>
 
             <div class="input-group mb-3">
-              <input type="number" class="form-control" placeholder="Bobot poin" name="bobot_poin">
+              <input type="number" class="form-control" placeholder="Bobot Sampai" name="bobot_sampai">
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Sanksi" name="sanksi">
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Keterangan" name="ket">
             </div>
 
             <div class="modal-footer">

@@ -1,7 +1,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Tambah Jenis Pelanggaran</h1>
-            <a href="#" data-toggle="modal" data-target="#tambahModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Tambah Jenis Pelanggaran</a>
+            <h1 class="h3 mb-0 text-gray-800">Tambah Kelas</h1>
+            <a href="#" data-toggle="modal" data-target="#tambahModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Tambah Kelas</a>
           </div>
 
           <?php if(validation_errors()) : ?>
@@ -13,7 +13,7 @@
 
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Data List Jenis Pelanggaran</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Data List Kelas</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -21,18 +21,18 @@
                   <thead>
                     <tr>
                       <th>No.</th>
-                      <th>Kategori Pelanggaran</th>
-                      <th>Jenis Pelanggaran</th>
-                      <th>Poin</th>
+                      <th>Wali Kelas</th>
+                      <th>Kelas</th>
+                      <th>Jurusan</th>
                       <th>Opsi</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
                       <th>No.</th>
-                      <th>Kategori Pelanggaran</th>
-                      <th>Jenis Pelanggaran</th>
-                      <th>Poin</th>
+                      <th>Wali Kelas</th>
+                      <th>Kelas</th>
+                      <th>Jurusan</th>
                       <th>Opsi</th>
                     </tr>
                   </tfoot>
@@ -40,20 +40,20 @@
                       <?php $i = 1; foreach ($data as $key) : ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $key['kategori_pelanggaran'] ?></td>
-                      <td><?= $key['jenis_pelanggaran'] ?></td>
-                      <td><?= $key['bobot_poin'] ?></td>
+                      <td><?= $key['id_wali_kelas'] ?></td>
+                      <td><?= $key['kelas'] ?></td>
+                      <td><?= $key['jurusan'] ?></td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                            <form action="<?= base_url('jenispelanggaran/edit'); ?>" method="GET">
-                                <input type="text" class="form-control" name="id_jenis_pelanggaran" id="id" value="<?= $key['id_jenis_pelanggaran']; ?>" hidden>
+                            <form action="<?= base_url('kelas/edit'); ?>" method="GET">
+                                <input type="text" class="form-control" name="id_kelas" id="id" value="<?= $key['id_kelas']; ?>" hidden>
                                 <button href="#" class="btn btn-info btn-circle btn-sm mr-1">
                                   <i class="fas fa-info-circle"></i>
                                 </button>
                             </form>
 
-                            <form action="<?= base_url('jenispelanggaran/deleteData'); ?>" method="POST">
-                                <input type="text" class="form-control" name="id_jenis_pelanggaran" id="id" value="<?= $key['id_jenis_pelanggaran']; ?>" hidden>
+                            <form action="<?= base_url('kelas/deleteData'); ?>" method="POST">
+                                <input type="text" class="form-control" name="id_kelas" id="id" value="<?= $key['id_kelas']; ?>" hidden>
                                 <button href="#" class="btn btn-danger btn-circle btn-sm mr-1" onclick="return confirm('Are you sure you want to delete this item?');">
                                   <i class="fas fa-trash"></i>
                                 </button>
@@ -72,28 +72,28 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content p-3">
         <div class="modal-header">
-          <h5 class="modal-title" id="tambahSubMenuModalLabel">Tambah Data Jenis Pelanggaran</h5>
+          <h5 class="modal-title" id="tambahSubMenuModalLabel">Tambah Data Kelas</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <form action="<?= base_url('jenispelanggaran/saveData'); ?>" method="POST"><br>
+        <form action="<?= base_url('kelas/saveData'); ?>" method="POST"><br>
 
-            <?php $choseRole = $this->db->get('ripel')->result_array(); ?>
+            <?php $choseRole = $this->db->get('lilas')->result_array(); ?>
             <div class="input-group mb-3">
-              <select class="custom-select" id="id_kategori_pelanggaran" name="id_kategori_pelanggaran">
+              <select class="custom-select" id="id_wali_kelas" name="id_wali_kelas">
                 <?php foreach($choseRole as $role) : ?>
-                    <option value="<?= $role['id_kategori_pelanggaran'] ?>"><?= $role['kategori_pelanggaran'] ?></option>
+                    <option value="<?= $role['id_wali_kelas'] ?>"><?= $role['username'] ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
 
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nama Jenis Pelanggaran" name="jenis_pelanggaran">
+              <input type="text" class="form-control" placeholder="Kelas" name="kelas">
             </div>
 
             <div class="input-group mb-3">
-              <input type="number" class="form-control" placeholder="Bobot poin" name="bobot_poin">
+              <input type="text" class="form-control" placeholder="Jurusan" name="jurusan">
             </div>
 
             <div class="modal-footer">
