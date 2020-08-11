@@ -37,8 +37,26 @@ class Pelanggaran3 extends CI_Controller {
         $data = $this->PelanggaranModel->getDataUserById($id);
 
         $this->load->view('layout/header', ['data' => $data]);
-        $this->load->view('admin/side_menu');
-        $this->load->view('admin/proses_pelanggaran');
+        $this->load->view('wali_kelas/side_menu');
+        $this->load->view('wali_kelas/proses_pelanggaran');
         $this->load->view('layout/footer');
+    }
+
+    public function update()
+    {
+        $id = $this->input->post('id_pelanggaran');
+        $data = $this->input->post();
+
+        $poin = $this->NipelModel->getDataUserById( $this->input->post('id_jenis_pelanggaran') );
+
+        $data = array_merge($data, [
+                'bobot_poin' => $poin['bobot_poin'],
+            ]
+        );
+
+        $this->PelanggaranModel->updateById($id, $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! Data has been Updated</div>');
+        redirect('pelanggaran3');
+    
     }
 }

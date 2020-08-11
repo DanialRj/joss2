@@ -65,7 +65,7 @@
                       <td><?= $key['at'] ?></td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
-                          <form action="<?= base_url('pelanggaran/proses'); ?>" method="GET">
+                          <form action="<?= base_url('pelanggaran3/proses'); ?>" method="GET">
                                 <input type="text" class="form-control" name="id_pelanggaran" id="id" value="<?= $key['id_pelanggaran']; ?>" hidden>
                                 <button href="#" class="btn btn-warning btn-circle btn-sm mr-1" <?= $key['id_kategori_masalah'] !== NULL ? 'hidden' : '' ?>>
                                   <i class="fas fa-info"></i>
