@@ -15,6 +15,11 @@ class KelasModel extends CI_Model
     {
         return $this->db->get_where('kelas', ['id_kelas' => $id])->row_array();
     }
+
+    public function getDataUserByIdWali($id)
+    {
+        return $this->db->get_where('kelas', ['id_wali_kelas' => $id])->row_array();
+    }
     
     public function insertData($data)
     {

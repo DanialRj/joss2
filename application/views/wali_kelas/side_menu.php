@@ -2,16 +2,16 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('walidashboard'); ?>">
-        <div class="sidebar-brand-text mx-3">Wali Kelas Page</div>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admindashboard'); ?>">
+        <div class="sidebar-brand-text mx-3">Admin Page</div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url('walidashboard'); ?>">
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('admindashboard'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -20,13 +20,26 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>Menu Laporan</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <a class="collapse-item" href="<?= base_url('laporansiswa3'); ?>">laporan Siswa</a>
+            <a class="collapse-item" href="<?= base_url('laporanjenispelanggaran3'); ?>">laporan Jenis Pelanggaran</a>
+            <a class="collapse-item" href="<?= base_url('laporankategorimasalah3'); ?>">laporan Kategori Masalah</a>
+            <a class="collapse-item" href="<?= base_url('laporanpelanggaran3'); ?>">laporan Pelangaran</a>
+          </div>
+        </div>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Transaksi Wali Kelas</span>
+        </a>
+        <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="<?= base_url('pelanggaran3'); ?>">Proses Pelangaran</a>
           </div>
         </div>
       </li>
