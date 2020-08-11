@@ -40,7 +40,7 @@
                       <?php $i = 1; foreach ($data as $key) : ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $key['id_wali_kelas'] ?></td>
+                      <td><?= $key['nama_wali_kelas'] ?></td>
                       <td><?= $key['kelas'] ?></td>
                       <td><?= $key['jurusan'] ?></td>
                       <td>

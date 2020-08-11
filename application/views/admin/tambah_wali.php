@@ -22,6 +22,7 @@
                     <tr>
                       <th>No.</th>
                       <th>Username</th>
+                      <th>Nama Wali Kelas</th>
                       <th>Opsi</th>
                     </tr>
                   </thead>
@@ -29,6 +30,7 @@
                     <tr>
                       <th>No.</th>
                       <th>Username</th>
+                      <th>Nama Wali Kelas</th>
                       <th>Opsi</th>
                     </tr>
                   </tfoot>
@@ -37,6 +39,7 @@
                     <tr>
                       <td><?= $i; ?></td>
                       <td><?= $key['username'] ?></td>
+                      <td><?= $key['nama_wali_kelas'] ?></td>
                       <td>
                           <div class="btn-group" role="group" aria-label="Basic example">
                             <form action="<?= base_url('wali/edit'); ?>" method="GET">
@@ -73,11 +76,15 @@
         </div>
         <form action="<?= base_url('wali/saveData'); ?>" method="POST"><br>            
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Email Admin" name="username">
+              <input type="email" class="form-control" placeholder="Email Wali Kelas" name="username">
             </div>
             
             <div class="input-group mb-3">
               <input type="password" class="form-control" placeholder="Password" name="password">
+            </div>
+
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Nama Wali Kelas" name="nama_wali_kelas">
             </div>
 
             <div class="modal-footer">

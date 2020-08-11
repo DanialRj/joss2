@@ -10,7 +10,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="<?= base_url('admindashboard'); ?>">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -24,13 +24,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="buttons.html">laporan Siswa</a>
-            <a class="collapse-item" href="buttons.html">laporan Kategori Pelangaran</a>
-            <a class="collapse-item" href="buttons.html">laporan Jenis Pelanggaran</a>
-            <a class="collapse-item" href="buttons.html">laporan Kelas</a>
-            <a class="collapse-item" href="buttons.html">laporan Kategori Masalah</a>
-            <a class="collapse-item" href="buttons.html">laporan Nilai Sosial</a>
-            <a class="collapse-item" href="buttons.html">laporan Pelangaran</a>
+            <a class="collapse-item" href="<?= base_url('laporansiswa'); ?>">laporan Siswa</a>
+            <a class="collapse-item" href="<?= base_url('laporanjenispelanggaran'); ?>">laporan Jenis Pelanggaran</a>
+            <a class="collapse-item" href="<?= base_url('laporankategorimasalah'); ?>">laporan Kategori Masalah</a>
+            <a class="collapse-item" href="<?= base_url('laporanpelanggaran'); ?>">laporan Pelangaran</a>
           </div>
         </div>
       </li>
@@ -51,6 +48,17 @@
             <a class="collapse-item" href="<?= base_url('kelas'); ?>">Tambah Kelas</a>
             <a class="collapse-item" href="<?= base_url('kategorimasalah'); ?>">Tambah Kategori Masalah</a>
             <a class="collapse-item" href="<?= base_url('nilaisosial'); ?>">Tambah Nilai Sosial</a>
+          </div>
+        </div>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Transaksi Admin</span>
+        </a>
+        <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="<?= base_url('pelanggaran'); ?>">Tambah Pelangaran</a>
           </div>
         </div>

@@ -29,4 +29,9 @@ class PelanggaranModel extends CI_Model
         $this->db->update('pelanggaran', $data);
     }
 
+    public function getAllDataUserByIdSiswa($id)
+    {
+        return $this->db->get_where('pelanggaran', ['id_siswa' => $id])->result_array();
+    }
+
 }

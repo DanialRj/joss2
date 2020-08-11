@@ -45,7 +45,7 @@
            
                                 <select class="custom-select" id="id_tim" name="id_tim">
                                   <?php foreach($choseRole as $role) : ?>
-                                      <option value="<?= $role['id_tim'] ?>" <?= $role['id_tim'] == $data['id_tim'] ? 'selected' : ''; ?> ><?= $role['username'] ?></option>
+                                      <option value="<?= $role['id_tim'] ?>" <?= $role['id_tim'] == $data['id_tim'] ? 'selected' : ''; ?> ><?= $role['nama_tim'] ?></option>
                                   <?php endforeach; ?>
                                 </select>
                             </div>

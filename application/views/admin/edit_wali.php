@@ -41,6 +41,15 @@
                             </div>
                         </div>
 
+                        <div class="input-group mb-3 col-md-4">
+                            <div class="input-group-prepend">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Nama Wali Kelas</span>
+                                </div>
+                                <input type="text" class="form-control"  name="nama_wali_kelas" value="<?= $data['nama_wali_kelas']; ?>">
+                            </div>
+                        </div>
+
                         <div class="input-group mb-3 col-md-12">
                             <a href="<?= base_url('wali'); ?>" class="btn btn-secondary mr-2">Kembali</a>
                             <button class="btn btn-primary" type="submit">Update</button>

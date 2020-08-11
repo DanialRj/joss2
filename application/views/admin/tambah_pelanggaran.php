@@ -52,7 +52,7 @@
                       <td><?= $choseRole['kategori_masalah'] ?></td>
 
                       <?php $choseRole = $this->db->get_where('tim_stp2k', ['id_tim' => $key['id_tim']])->row_array(); ?>
-                      <td><?= $choseRole['username'] ?></td>
+                      <td><?= $choseRole['nama_tim'] ?></td>
 
                       <?php $choseRole = $this->db->get_where('siswa', ['id_siswa' => $key['id_siswa']])->row_array(); ?>
                       <td><?= $choseRole['nama_siswa'] ?></td>

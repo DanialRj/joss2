@@ -5,7 +5,10 @@ class KelasModel extends CI_Model
 {
     public function getAllData()
     {
-        return $this->db->get('kelas')->result_array();
+        $this->db->select('kelas.*, lilas.*');
+        $this->db->from('kelas');
+        $this->db->join('lilas', 'lilas.id_wali_kelas = kelas.id_wali_kelas');
+        return $this->db->get()->result_array();
     }
 
     public function getDataUserById($id)
