@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2020 at 11:45 PM
+-- Generation Time: Aug 11, 2020 at 07:32 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -74,6 +74,7 @@ CREATE TABLE `lilas` (
   `id_wali_kelas` int(11) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
+  `nama_wali_kelas` varchar(255) NOT NULL,
   `alert` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -81,8 +82,8 @@ CREATE TABLE `lilas` (
 -- Dumping data for table `lilas`
 --
 
-INSERT INTO `lilas` (`id_wali_kelas`, `username`, `password`, `alert`) VALUES
-(2, 'wali@wali.com', 'wali123', '2020-07-23');
+INSERT INTO `lilas` (`id_wali_kelas`, `username`, `password`, `nama_wali_kelas`, `alert`) VALUES
+(2, 'wali@wali.com', 'wali123', 'joko piono', '2020-08-11');
 
 -- --------------------------------------------------------
 
@@ -98,6 +99,14 @@ CREATE TABLE `nilai_sosial` (
   `btr_sikap_sosial` int(11) DEFAULT NULL,
   `nilai_sosial` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nilai_sosial`
+--
+
+INSERT INTO `nilai_sosial` (`id_nilai_sosial`, `id_siswa`, `catatan_perilaku`, `btr_sikap_spiritual`, `btr_sikap_sosial`, `nilai_sosial`) VALUES
+(1, 2, 'baikkk', 20, 20, 20),
+(4, 3, 'baik poll', 2, 20, 11);
 
 -- --------------------------------------------------------
 
@@ -117,7 +126,9 @@ CREATE TABLE `nipel` (
 --
 
 INSERT INTO `nipel` (`id_jenis_pelanggaran`, `id_kategori_pelanggaran`, `jenis_pelanggaran`, `bobot_poin`) VALUES
-(1, 1, 'bolos', 10);
+(1, 1, 'bolos', 100),
+(3, 1, 'colut', 50),
+(4, 3, 'mabuk', 150);
 
 -- --------------------------------------------------------
 
@@ -136,6 +147,13 @@ CREATE TABLE `pelanggaran` (
   `at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pelanggaran`
+--
+
+INSERT INTO `pelanggaran` (`id_pelanggaran`, `id_kategori_masalah`, `id_tim`, `id_siswa`, `id_nilai_sosial`, `id_jenis_pelanggaran`, `bobot_poin`, `at`) VALUES
+(1, 1, 2, 2, 1, 3, 50, '2020-08-06');
+
 -- --------------------------------------------------------
 
 --
@@ -150,6 +168,14 @@ CREATE TABLE `rilah` (
   `sanksi` varchar(255) DEFAULT NULL,
   `ket` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rilah`
+--
+
+INSERT INTO `rilah` (`id_kategori_masalah`, `kategori_masalah`, `bobot_dari`, `bobot_sampai`, `sanksi`, `ket`) VALUES
+(1, 'Peringatan 1', 30, 30, 'Teguran hingga pembinaan oleh wali kelas', 'WK'),
+(3, 'DO', 150, 100000, 'DO', 'kepala sekolah');
 
 -- --------------------------------------------------------
 
@@ -193,7 +219,8 @@ CREATE TABLE `siswa` (
 
 INSERT INTO `siswa` (`id_siswa`, `id_kelas`, `nisn`, `nama_siswa`, `jenis_kelamin`, `alamat`, `tgl_lahir`) VALUES
 (1, 1, '101010101', 'danial', 'Laki-laki', 'mojosongo', '2020-08-12'),
-(2, 2, '10101023', 'jafar', 'Perempuan', 'semarang', '2020-08-05');
+(2, 2, '10101023', 'jafar', 'Perempuan', 'semarang', '2020-08-05'),
+(3, 2, '19199191', 'Cucuk', 'Perempuan', 'sukoharjo', '2020-08-06');
 
 -- --------------------------------------------------------
 
@@ -288,61 +315,61 @@ ALTER TABLE `tim_stp2k`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lilas`
 --
 ALTER TABLE `lilas`
-  MODIFY `id_wali_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_wali_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `nilai_sosial`
 --
 ALTER TABLE `nilai_sosial`
-  MODIFY `id_nilai_sosial` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_nilai_sosial` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `nipel`
 --
 ALTER TABLE `nipel`
-  MODIFY `id_jenis_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jenis_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `pelanggaran`
 --
 ALTER TABLE `pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rilah`
 --
 ALTER TABLE `rilah`
-  MODIFY `id_kategori_masalah` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kategori_masalah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ripel`
 --
 ALTER TABLE `ripel`
-  MODIFY `id_kategori_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kategori_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tim_stp2k`
 --
 ALTER TABLE `tim_stp2k`
-  MODIFY `id_tim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_tim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
