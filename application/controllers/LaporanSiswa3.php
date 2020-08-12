@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class LaporanSiswa extends CI_Controller {
+class LaporanSiswa3 extends CI_Controller {
 
     public function __construct()
     {
@@ -17,17 +17,21 @@ class LaporanSiswa extends CI_Controller {
 
     public function index ()
     {
-        $data = $this->SiswaModel->getAllData();
+        $idWali = $this->session->userdata('id');
+        $kelas = $this->KelasModel->getDataUserByIdWali($idWali);
+        $data = $this->SiswaModel->getAllData3($kelas['id_kelas']);
 
         $this->load->view('layout/header', ['data' => $data]);
-        $this->load->view('admin/side_menu');
-        $this->load->view('admin/laporan_siswa');
+        $this->load->view('wali_kelas/side_menu');
+        $this->load->view('wali_kelas/laporan_siswa');
         $this->load->view('layout/footer');
     }
 
     public function laporanKeseluruhan()
     {
-        $data = $this->SiswaModel->getAllData();
+        $idWali = $this->session->userdata('id');
+        $kelas = $this->KelasModel->getDataUserByIdWali($idWali);
+        $data = $this->SiswaModel->getAllData3($kelas['id_kelas']);
 
         $pdf = new FPDF('P','mm','A4');
         // membuat halaman baru
@@ -186,7 +190,7 @@ class LaporanSiswa extends CI_Controller {
                 $pdf->SetFont('Times','B',10);
                 $pdf->Cell(30,6,'Sanksi',1,0);
                 $pdf->SetFont('Times','',10);
-                $pdf->Cell(151,6,$chose2['sanksi'],1,1);
+                $pdf->Cell(151,6,$chose2['sanksi'],1,0);
 
                 $i++;
             }
