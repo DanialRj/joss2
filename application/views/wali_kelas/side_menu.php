@@ -2,8 +2,8 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admindashboard'); ?>">
-        <div class="sidebar-brand-text mx-3">Admin Page</div>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('walidashboard'); ?>">
+        <div class="sidebar-brand-text mx-3">Wali Kelas Page</div>
       </a>
 
       <!-- Divider -->

@@ -51,7 +51,7 @@ class NilaiSosial3 extends CI_Controller {
 
             $this->NilaiSosialModel->InsertData($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! Data has been Added</div>');
-            redirect('nilaisosial');
+            redirect('nilaisosial3');
         }
     }
 
@@ -77,7 +77,7 @@ class NilaiSosial3 extends CI_Controller {
         if( $this->form_validation->run() == FALSE )
         {
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Error!! Tidak Boleh Kosong.</div>');
-            redirect("nilaisosial/edit?id_nilai_sosial=$id");
+            redirect("nilaisosial3/edit?id_nilai_sosial=$id");
         } else {
             $data = array_merge( $data, [
                     'nilai_sosial' => ( $this->input->post('btr_sikap_spiritual') + $this->input->post('btr_sikap_sosial') ) / 2
@@ -86,7 +86,7 @@ class NilaiSosial3 extends CI_Controller {
 
             $this->NilaiSosialModel->updateById($id, $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! Data has been Updated</div>');
-            redirect('nilaisosial');
+            redirect('nilaisosial3');
         }
     }
 }

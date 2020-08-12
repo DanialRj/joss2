@@ -64,7 +64,7 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <form action="<?= base_url('nilaisosial/saveData'); ?>" method="POST"><br>
+        <form action="<?= base_url('nilaisosial3/saveData'); ?>" method="POST"><br>
             <?php $choseRole = $this->db->get('siswa')->result_array(); ?>
             <div class="input-group mb-3">
               <select class="custom-select" id="id_siswa" name="id_siswa">
