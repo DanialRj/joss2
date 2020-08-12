@@ -15,7 +15,7 @@ class NilaiSosial3 extends CI_Controller {
 
         $this->load->view('layout/header', ['data' => $data]);
         $this->load->view('wali_kelas/side_menu');
-        $this->load->view('admin/tambah_nilai_sosial');
+        $this->load->view('wali_kelas/tambah_nilai_sosial');
         $this->load->view('layout/footer');
     }
 
